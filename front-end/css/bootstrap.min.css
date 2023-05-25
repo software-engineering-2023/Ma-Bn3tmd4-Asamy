@@ -6597,7 +6597,7 @@ button.bg-dark:focus {
 
 .mr-2,
 .mx-2 {
-  margin-top: 0.5rem !important ;
+  margin-top: 1rem !important; 
   margin-right: 2.5rem !important; }
 
 .mb-2,
