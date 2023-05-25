@@ -70,7 +70,14 @@ hr {
 
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
-  margin-bottom: 0.5rem; }
+  margin-bottom: 0.5rem; 
+}
+
+h2 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 p {
   margin-top: 0;
@@ -6590,7 +6597,8 @@ button.bg-dark:focus {
 
 .mr-2,
 .mx-2 {
-  margin-right: 0.5rem !important; }
+  margin-top: 0.5rem !important ;
+  margin-right: 2.5rem !important; }
 
 .mb-2,
 .my-2 {
@@ -8131,3 +8139,11 @@ a.text-dark:hover, a.text-dark:focus {
   .table .thead-dark th {
     color: inherit;
     border-color: #dee2e6; } }
+
+    .button-container {
+      margin-top: 20px;
+    }
+
+    .button-container button {
+      margin-right: 100px;
+    }
