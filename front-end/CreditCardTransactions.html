@@ -61,7 +61,6 @@
             <nav class="site-navigation position-relative text-right" role="navigation">
 
               <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
-                <li><a href="index.html#home-section" class="nav-link">Home</a></li>
                 <li class="has-children">
                   <ul class="dropdown">
                     <li><a href="index.html#team-section" class="nav-link">Team</a></li>
@@ -108,24 +107,51 @@
                 
                 <h2 style="color: rgb(245, 102, 50);">Credit Card Transactions</h2>
                 
-                <table style="width: 100%;">
+                <table id="myTable" style="width: 100%;">
                   <tr >
                     <td style = "text-align: center;">ID</td>
                     <td style = "text-align: center;">From</td>   
                     <td style = "text-align: center;">To</td>
                   </tr>
                   <tr>
-                    <td style = "text-align: center;" >1</td>
+                    <td>1</td>
                     <td>Koka</td>
                     <td>Nour</td>
                   </tr>
                 </table>
                 
-                <p>To understand the example better, we have added borders to the table.</p>
                 
                 </body>
+                <script>
+                  function addRow() {
+                    let table = document.getElementById("myTable");
+                    let arr = table.innerText.split("\n");
+                    let tempNum = 1;
+                    if(arr.length > 1){
+                      arr = arr[arr.length - 1];
+                      arr = arr.split("");
+                      let temp = "";
+                      for(let i = 0; i<arr.length; i++){
+                        if(arr[i] < '0' || arr[i] > '9'){
+                          break;
+                        }
+                        temp += arr[i];
+                      }
+                      tempNum = Number(temp);
+                    }
+                    let row = table.insertRow(-1);
+                    let c1 = row.insertCell(0);
+                    let c2 = row.insertCell(1);
+                    let c3 = row.insertCell(2);
+                    c1.innerText = tempNum + 1;
+                    c2.innerText = "Osama"
+                    c3.innerText = "Mohamed"
+                }
+                </script>
           
           <div class="col-md-10 mt-lg-5 text-center">
+            <button  style="color: rgb(255, 255, 255); background-color: rgb(245, 102, 50); padding: 0%; border-color: brown; " id="btn" onclick="addRow()"> Refresh Transactions </button>
+
             <div class="single-text owl-carousel">
             
 
