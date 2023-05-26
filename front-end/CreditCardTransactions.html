@@ -123,29 +123,36 @@
                 
                 </body>
                 <script>
+                  let from = "Osama";
+                  let to = "Mohamed"
                   function addRow() {
-                    let table = document.getElementById("myTable");
-                    let arr = table.innerText.split("\n");
-                    let tempNum = 1;
-                    if(arr.length > 1){
-                      arr = arr[arr.length - 1];
-                      arr = arr.split("");
-                      let temp = "";
-                      for(let i = 0; i<arr.length; i++){
-                        if(arr[i] < '0' || arr[i] > '9'){
-                          break;
+                    if(from != "" && to != ""){
+                      let table = document.getElementById("myTable");
+                      let arr = table.innerText.split("\n");
+                      let tempNum = 1;
+                      if(arr.length > 1){
+                        arr = arr[arr.length - 1];
+                        arr = arr.split("");
+                        let temp = "";
+                        for(let i = 0; i<arr.length; i++){
+                          if(arr[i] < '0' || arr[i] > '9'){
+                            break;
+                          }
+                          temp += arr[i];
                         }
-                        temp += arr[i];
+                        tempNum = Number(temp);
                       }
-                      tempNum = Number(temp);
+                      let row = table.insertRow(-1);
+                      let c1 = row.insertCell(0);
+                      let c2 = row.insertCell(1);
+                      let c3 = row.insertCell(2);
+                      c1.innerText = tempNum + 1;
+                      c2.innerText = from
+                      c3.innerText = to
+                      from = "";
+                      to = "";
                     }
-                    let row = table.insertRow(-1);
-                    let c1 = row.insertCell(0);
-                    let c2 = row.insertCell(1);
-                    let c3 = row.insertCell(2);
-                    c1.innerText = tempNum + 1;
-                    c2.innerText = "Osama"
-                    c3.innerText = "Mohamed"
+                    
                 }
                 </script>
           
