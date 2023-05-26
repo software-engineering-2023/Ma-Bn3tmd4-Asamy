@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Banker &mdash; Website Template by Colorlib</title>
+    <title>GUB</title>
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -177,12 +177,12 @@
               You can also apply for different loans to suit your needs.
             </p>
               <div class="button-container">
-                <button type="button" class="btn btn-primary mr-2">
+                <a href="creditCardApplicationForm.html"><button type="button" class="btn btn-primary mr-2" >
                   Apply for Credit Card
-                </button>
-                <button type="button" class="btn btn-primary mr-2">
+                </button></a>
+                <a href="loanApplicationForm.html"><button type="button" class="btn btn-primary mr-2">
                   Apply for Loan
-                </button>
+                </button></a>
               </div>
           </div>
         </div>
@@ -553,13 +553,13 @@
           </div>
           <div class="row">
             <div class="col-md-12 mb-5">
-              <form action="#" class="p-5 bg-white">
+              <form class="p-5 bg-white" onsubmit="submitForm(event)">
                 <h2 class="h4 text-black mb-5">Contact Form</h2>
 
                 <div class="row form-group">
                   <div class="col-md-6 mb-3 mb-md-0">
                     <label class="text-black" for="fname">First Name</label>
-                    <input type="text" id="fname" class="form-control" />
+                    <input type="text" id="fname" class="form-control" required />
                   </div>
                   <div class="col-md-6">
                     <label class="text-black" for="lname">Last Name</label>
@@ -570,7 +570,7 @@
                 <div class="row form-group">
                   <div class="col-md-12">
                     <label class="text-black" for="email">Email</label>
-                    <input type="email" id="email" class="form-control" />
+                    <input type="email" id="email" class="form-control" required/>
                   </div>
                 </div>
 
@@ -591,6 +591,7 @@
                       rows="7"
                       class="form-control"
                       placeholder="Write your notes or questions here..."
+                      required
                     ></textarea>
                   </div>
                 </div>
@@ -605,6 +606,28 @@
                   </div>
                 </div>
               </form>
+              <div
+                id="success-message"
+                class="alert alert-success text-center mt-3"
+                style="display: none"
+              >
+                Successfully submitted!
+              </div>
+              <script>
+                function submitForm(event) {
+                  event.preventDefault(); // Prevent form submission
+
+                  // Show the success message
+                  var successMessage =
+                    document.getElementById("success-message");
+                  successMessage.style.display = "block";
+
+                  // Redirect back to the homepage after a delay
+                  setTimeout(function () {
+                    window.location.href = "index.html";
+                  }, 1000); // Redirect after 1 seconds (adjust as needed)
+                }
+              </script>
             </div>
           </div>
         </div>
