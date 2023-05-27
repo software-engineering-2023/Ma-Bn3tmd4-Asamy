@@ -27,7 +27,7 @@ body {
 	 color: #393232;
 }
  img {
-	 max-width: 100%;
+	 max-width: 50%;
 	 display: block;
 }
  .card-list {
@@ -50,6 +50,15 @@ body {
  .card-image {
 	 border-radius: 10px;
 	 overflow: hidden;
+}
+.card-image a{
+  font-weight: 600;
+	 font-size: 1.375rem;
+	 line-height: 1.25;
+	 padding-right: 1rem;
+	 text-decoration: none;
+	 color: inherit;
+	 will-change: transform;
 }
  .card-header {
 	 margin-top: 1.5rem;
