@@ -9,22 +9,44 @@
     <h2>Register</h2>
     <form action="#" method="post">
       <label for="username">Username</label>
-      <input type="text" id="username" name="username" placeholder="Enter your username">
+      <input type="text" class="username" name="username" placeholder="Enter your username">
 
       <label for="email">Email</label>
-      <input type="email" id="email" name="email" placeholder="Enter your email">
+      <input type="email" class="email" name="email" placeholder="Enter your email">
 
       <label for="password">Password</label>
-      <input type="password" id="password" name="password" placeholder="Enter your password">
+      <input type="password" class="password" name="password" placeholder="Enter your password">
 
       <label for="birthdate">Birth Date</label>
-      <input type="date" id="birthdate" name="birthdate">
+      <input type="date" class="birthdate" name="birthdate">
 
       <label for="phone">Phone Number</label>
-      <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+      <input type="tel" class="phone" name="phone" placeholder="Enter your phone number">
 
-      <input type="submit" value="Register">
+      <input type="button" value="Register", id = "register", onclick="check()">
     </form>
+    <script>
+      function check(){
+        const username = document.getElementsByClassName("username")[0].value;
+        const email = document.getElementsByClassName("email")[0].value;
+        const password = document.getElementsByClassName("password")[0].value;
+        let date = document.getElementsByClassName("birthdate")[0].value;
+        if(username == "nour" || username == "banker" || username == "admin"){
+          alert("Username already taken");
+        }else{
+          document.location.href = "indexLoggedIn.html", true;
+        }
+        
+      }
+
+      function reverse(x){
+        let y = "";
+        for(let i = x.length - 1; i>=0; i--){
+          y.concat(x.charAt(i));
+        }
+        return y;
+      }
+    </script>
   </div>
 </body>
 </html>
