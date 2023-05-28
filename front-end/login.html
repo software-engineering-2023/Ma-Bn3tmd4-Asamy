@@ -5,11 +5,13 @@
 <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
-    <header class="name">
-        German University Bank 
+    <header class="name" style="color: rgb(245, 102, 50);">
+      <span style="color:#000000">German</span>
+      <span style="color:#ff0000">University</span>
+      <span style="color:#ffae00">Bank</span>
     </header>
   <div class="container">
-    <h2>Login</h2>
+    <h2 style="color: rgb(245, 102, 50);">Login</h2>
     <form action="#" method="post">
       <label for="username">Username</label>
       <input class ="login-info" type="text" id="username" name="username" placeholder="Enter your username" id="username">
@@ -31,6 +33,8 @@
           }else if(username == "banker" && password == "banker"){
             document.location.href = "singleBanker.html", true;
           }else if(username == "nour" && password == "ayman"){
+            document.location.href = "indexLoggedIn.html", true;
+          }else if(username == "Leo" && password == "Messi"){
             document.location.href = "indexLoggedIn.html", true;
           }else{
             alert("Invalid Username or Password.");
