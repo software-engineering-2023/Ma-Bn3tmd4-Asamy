@@ -98,7 +98,9 @@
       
     </div>
     <div class="site-blocks-cover over  lay" style="background-image: url(images/white_background.jpg);" data-aos="fade" id="home-section">
-        
+
+      
+      
 
       <div class="container">
         <div class="row align-items-center justify-content-center" >
@@ -106,21 +108,22 @@
               
             
                 <body2>
+                  
 
 
                     <div class="container">  
                         
 
                         <div class="card-list" style="align-self: left;">
-                          <h3 style="color: rgb(245, 102, 50); text-align: center;">Remaining Points: 1500</h3>
+                          <h3 id="Points" style="color: rgb(245, 102, 50); text-align: center;">Remaining Points: 1000</h3>
                             <article class="card">
                                 <figure class="card-image">
                                     <img src="images/mcdonalds.png" alt="mcdonalds">
                                     <a>Big Mac Combo Large</a>
                                 </figure>
                                 <div class="card-header">
-                                    <a>300 Points</a>
-                                    <button class="button" style="color: white; background-color: rgb(245, 102, 50); ">Redeem</button>
+                                    <a id="price1">300 Points</a>
+                                    <button class="button" style="color: white; background-color: rgb(245, 102, 50); " id="item1" onclick="redeemPoints(1)"> Redeem</button>
                                 </div>
                             </article>
                             <div class="container">
@@ -133,15 +136,53 @@
 
                                 </figure>
                                 <div class="card-header">
-                                    <a>500 Points</a>
-                                    <button class="button" style="color: white; background-color: rgb(245, 102, 50); ">Redeem</button>
+                                    <a id="price2">500 Points</a>
+                                    <button class="button" style="color: white; background-color: rgb(245, 102, 50);" id="item2" onclick="redeemPoints(2)">Redeem</button>
                                 </div>
                             </article>
 
+                            <article class="card">
+                              <figure class="card-image">
+                                  <img src="images/cinnabon.png" alt="Cinnabon" style="height: 20%;">
+                                  <a>Caramel Pecanbon</a>
+
+                              </figure>
+                              <div class="card-header">
+                                  <a id="price3">250 Points</a>
+                                  <button class="button" style="color: white; background-color: rgb(245, 102, 50); " id="item3" onclick="redeemPoints(3)">Redeem</button>
+                              </div>
+                          </article>
+
                         </div>
                     </div>
+                    <script>
+                      function redeemPoints(x) {
+                          let currentPoints = document.getElementById("Points").innerText;
+                          currentPoints = currentPoints.split(" ");
+                          let points = Number(currentPoints[2]);
+                          let temp = "price".concat(x);
+                          let price = document.getElementById(temp).innerText;
+                          
+                          price = price.split(" ");
+                          price = Number(price[0]);
+                          console.log(price);
+                          if(points >= price){
+                            points -= price;
+                            const updatedPoints = document.getElementById("Points");
+                            updatedPoints.innerText = "Remaining Points: ".concat(points);
+                            const button = document.getElementById("item" + x);
+                            button.disabled = true;
+                          }else{
+                              alert("No Enough Points");
+                          }
+                    }
+                    </script>
+                    
 
                 </body2>
+                
+                
+                
                 
           
           <div class="col-md-10 mt-lg-5 text-center">
