@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Report Credit Card Theft/Loss/Damage and Apply for Replacement</title>
+    <link rel="stylesheet" type="text/css" href="css/report-card.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Report Credit Card Loss</h2>
+    <form action="#" method="post">
+      <label>Reason for Replacement:</label>
+      <br>
+      <input type="checkbox" id="theft" name="reason" value="theft" onchange="limitCheckbox(this)">
+      <label for="theft">Theft</label>
+
+      <input type="checkbox" id="loss" name="reason" value="loss" onchange="limitCheckbox(this)">
+      <label for="loss">Loss</label>
+
+      <input type="checkbox" id="damage" name="reason" value="damage" onchange="limitCheckbox(this)">
+      <label for="damage">Damage</label>
+      <br>
+
+      <label for="description">Additional Information:</label>
+      <textarea id="description" name="description" placeholder="Enter any additional information"></textarea>
+
+      <input type="submit" value="Submit Report and Apply for Replacement">
+    </form>
+  </div>
+
+  <script>
+    function limitCheckbox(checkbox) {
+      const checkboxes = document.querySelectorAll('input[name="reason"]');
+      checkboxes.forEach((cb) => {
+        if (cb !== checkbox) {
+          cb.checked = false;
+        }
+      });
+    }
+  </script>
+</body>
+</html>
