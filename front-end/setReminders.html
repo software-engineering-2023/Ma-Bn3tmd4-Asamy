@@ -197,8 +197,23 @@
         class="alert alert-success text-center mt-3"
         style="display: none"
       >
-        Successfully submitted!
+        Successfully Set!
       </div>
+      <script>
+        function submitForm(event) {
+          event.preventDefault(); // Prevent form submission
+
+          // Show the success message
+          var successMessage =
+            document.getElementById("success-message");
+          successMessage.style.display = "block";
+
+          // Redirect back to the homepage after a delay
+          setTimeout(function () {
+            window.location.href = "singleClient.html";
+          }, 1500); // Redirect after 1 seconds
+        }
+      </script>
     </div>
   </section>
 
