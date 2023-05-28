@@ -31,7 +31,10 @@
         const email = document.getElementsByClassName("email")[0].value;
         const password = document.getElementsByClassName("password")[0].value;
         let date = document.getElementsByClassName("birthdate")[0].value;
-        if(username == "nour" || username == "banker" || username == "admin"){
+        const phone = document.getElementsByClassName("phone")[0].value;
+        if(phone == "" || username == "" || email == "" || password == "" || date == ""){
+          alert("All fields are required");
+        }else if(username == "nour" || username == "banker" || username == "admin"){
           alert("Username already taken");
         }else{
           alert("Successful Registeration !")
