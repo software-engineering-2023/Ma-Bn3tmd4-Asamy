@@ -12,14 +12,36 @@
     <h2>Login</h2>
     <form action="#" method="post">
       <label for="username">Username</label>
-      <input class ="login-info" type="text" id="username" name="username" placeholder="Enter your username">
+      <input class ="login-info" type="text" id="username" name="username" placeholder="Enter your username" id="username">
 
       <label for="password">Password</label>
-      <input class ="login-info" type="password" id="password" name="password" placeholder="Enter your password">
-
-      <input type="submit" value="Login">
-      <input type="submit" value="I don't have an account">
+      <input class ="login-info1" type="password" id="password" name="password" placeholder="Enter your password" id="password">
+      <input type="button" value="Login", id="Login", onclick="redirect()">
+      <input type="button" value="I don't have an account", onclick="signUp()">
     </form>
+    <script>
+      function redirect(){
+        const username = document.getElementsByClassName("login-info")[0].value;
+        const password = document.getElementsByClassName("login-info1")[0].value;
+        if(username == "" || password == ""){
+          alert("Username and Password should not be empty"); 
+        }else{
+          if(username == "admin" && password == "admin"){
+            document.location.href = "singleSystemAdmin.html", true;
+          }else if(username == "banker" && password == "banker"){
+            document.location.href = "singleBanker.html", true;
+          }else if(username == "nour" && password == "ayman"){
+            document.location.href = "indexLoggedIn.html", true;
+          }else{
+            alert("Invalid Username or Password.");
+          }
+        }
+        return false;
+      }
+      function signUp(){
+        document.location.href = "register.html", true;
+      }
+    </script>
   </div>
 </body>
 </html>
