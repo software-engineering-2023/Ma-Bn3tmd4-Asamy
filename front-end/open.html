@@ -6,31 +6,50 @@
 </head>
 <body>
   <div class="container">
-    <h2>Open Bank Account</h2>
+    <h2 style="color: rgb(245, 102, 50);">Open Bank Account</h2>
     <form action="#" method="post">
       <label for="firstName">First Name</label>
-      <input type="text" id="firstName" name="firstName" placeholder="Enter your first name">
+      <input class="firstName" type="text" id="firstName" name="firstName" placeholder="Enter your first name">
 
       <label for="middleName">Middle Name</label>
-      <input type="text" id="middleName" name="middleName" placeholder="Enter your middle name">
+      <input class="middleName" type="text" id="middleName" name="middleName" placeholder="Enter your middle name">
 
       <label for="lastName">Last Name</label>
-      <input type="text" id="lastName" name="lastName" placeholder="Enter your last name">
+      <input class="lastName" type="text" id="lastName" name="lastName" placeholder="Enter your last name">
 
       <label for="phoneNumber">Phone Number</label>
-      <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Enter your phone number">
+      <input class="phoneNumber" type="number" id="phoneNumber" name="phoneNumber" placeholder="Enter your phone number">
 
       <label for="nationalId">National ID</label>
-      <input type="text" id="nationalId" name="nationalId" placeholder="Enter your national ID number">
+      <input class="nationalId" type="number" id="nationalId" name="nationalId" placeholder="Enter your national ID number">
 
       <label for="address">Address</label>
-      <textarea id="address" name="address" placeholder="Enter your address"></textarea>
+      <textarea class="address" id="address" name="address" placeholder="Enter your address"></textarea>
 
       <label for="job">Job</label>
-      <input type="text" id="job" name="job" placeholder="Enter your job">
+      <input class="job" type="text" id="job" name="job" placeholder="Enter your job">
 
-      <input type="submit" value="Open Account">
+      <input onclick="check()" type="button" value="Open Account">
     </form>
+    <script>
+      function check(){
+        firstName = document.getElementsByClassName("firstName")[0].value;
+        middleName = document.getElementsByClassName("middleName")[0].value;
+        lastName = document.getElementsByClassName("lastName")[0].value;
+        phoneNumber = document.getElementsByClassName("phoneNumber")[0].value;
+        nationalID = document.getElementsByClassName("nationalId")[0].value;
+        address = document.getElementsByClassName("address")[0].value;
+        job = document.getElementsByClassName("job")[0].value;
+        console.log(nationalID);
+        if(firstName == "" || middleName == "" || lastName == "" ||phoneNumber == "" || nationalID == "" || address == "" || job == ""){
+          alert("All fields are required");
+        }else{
+          alert("Bank Account Request Sent.");
+          document.location.href = "indexLoggedIn.html", true;
+        }
+      }
+
+    </script>
   </div>
 </body>
 </html>

@@ -52,3 +52,20 @@ body {
     background-color: #3178fc;
     transform: scale(1.05);
   }
+
+  input[type="button"] {
+    background-color: rgb(245, 102, 50);
+    color: white;
+    padding: 12px 20px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    transition: 0.5s ease;
+  }
+
+  input[type="button"]:hover {
+    background-color: rgb(245, 150, 50);
+    transform: scale(1.05);
+  }

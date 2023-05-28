@@ -6,13 +6,23 @@
 </head>
 <body>
   <div class="container">
-    <h2 class = "word">Close Bank Account</h2>
+    <h2 style="color: rgb(245, 102, 50);" class = "word">Close Bank Account</h2>
     <form action="#" method="post">
       <label for="password">Password:</label>
-      <input type="password" id="password" name="password" placeholder="Enter your password">
-
-      <input type="submit" value="Close Bank Account">
+      <input class="password" type="password" id="password" name="password" placeholder="Enter your password">
+      <input onclick="confirm()" type="button" value="Close Bank Account">
     </form>
+    <script>
+      function confirm(){
+        password = document.getElementsByClassName("password")[0].value;
+        if(password != "Messi" && password != "ayman"){
+          alert("Invalid Password");
+        }else{
+          alert("Bank Account has been Closed");
+          document.location.href = "index.html", true;
+        }
+      }
+    </script>
   </div>
 </body>
 </html>
