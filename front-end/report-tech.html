@@ -6,7 +6,7 @@
 </head>
 <body>
   <div class="container">
-    <h2>Report Technical Issues</h2>
+    <h2 style="color: rgb(245, 102, 50);" class = "word">Report Technical Issues</h2>
     <form action="#" method="post">
       <label for="name">Subject</label>
       <input type="text" id="name" name="name" placeholder="Enter the main subject of the issue">
@@ -17,8 +17,24 @@
       <label for="issue">Issue:</label>
       <textarea id="issue" name="issue" placeholder="Describe the issue"></textarea>
 
-      <input type="submit" value="Report">
+      <input onclick="confirm()" type="submit" value="Report">
     </form>
+    <script>
+        function confirm(){
+          
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const issue = document.getElementById("issue").value;
+          if(name == "" || email == "" || issue == ""){
+            alert("All fields are required");
+            document.location.href = "report-tech.html", true;
+          }else{
+            alert("Issue Sent. We will get back to you soon");
+            document.location.href = "indexLoggedIn.html", true;
+          }
+        }
+  
+      </script>
   </div>
 </body>
 </html>

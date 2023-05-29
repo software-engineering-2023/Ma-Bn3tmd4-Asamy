@@ -17,6 +17,7 @@
         password = document.getElementsByClassName("password")[0].value;
         if(password != "Messi" && password != "ayman"){
           alert("Invalid Password");
+          document.location.href = "close.html", true;
         }else{
           alert("Bank Account has been Closed");
           document.location.href = "index.html", true;

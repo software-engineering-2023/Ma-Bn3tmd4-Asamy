@@ -39,8 +39,9 @@ body {
       height: 120px;
   }
 
+  
   input[type="submit"] {
-    background-color: #31bcfc;
+    background-color: rgb(245, 102, 50);
     color: white;
     padding: 12px 20px;
     margin: 10px 0;
@@ -52,6 +53,6 @@ body {
   }
 
   input[type="submit"]:hover {
-    background-color: #3178fc;
+    background-color: rgb(245, 150, 50);
     transform: scale(1.05);
   }
