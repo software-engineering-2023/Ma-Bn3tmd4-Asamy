@@ -103,8 +103,8 @@
             <div class="container">
                 <div class="pt-5">
                     <div class="text-center pt-5">
-                        <h2 class="section-title mb-3" data-aos="fade-up" data-aos-delay="">
-                            Balance: 1500$   
+                        <h2 class="section-title mb-3" data-aos="fade-up" data-aos-delay="" id = "balance">
+                            Balance: 10000$   
                         </h2>
                     </div>
                 </div>
@@ -114,49 +114,89 @@
                             <ul class="comment-list">
                                 <li class="comment">    
                                     <div class="comment-body">
-                                        <h3>Water Bills: 100$ EGP</h3>
+                                        <h3 id = "price6">Credit Card Bills: 500$ EGP</h3>
                                         <div class="meta">enter the amount</div>
-                                        <input type="text" class="form-control" id="waterBills" style = "margin-bottom: 10px;"/>
-                                        <input type="reset" class="btn btn-success" value="Pay Now">
+                                        <input type="text" class="form-control" id="bill6" style = "margin-bottom: 10px;"/>
+                                        <input type="reset" class="btn btn-success" value="Pay Now" onclick="payBills(6)">
                                     </div>
                                 </li>
                                 <li class="comment">    
                                     <div class="comment-body">
-                                        <h3>Electricity Bills: 250$ EGP</h3>
+                                        <h3 id = "price7">Loan Bills: 1000$ EGP</h3>
                                         <div class="meta">enter the amount</div>
-                                        <input type="text" class="form-control" id="electricityBills" style = "margin-bottom: 10px;"/>
-                                        <input type="reset" class="btn btn-success" value="Pay Now">
+                                        <input type="text" class="form-control" id="bill7" style = "margin-bottom: 10px;"/>
+                                        <input type="reset" class="btn btn-success" value="Pay Now" onclick="payBills(7)">
+                                    </div>
+                                </li>
+
+                                <li class="comment">    
+                                    <div class="comment-body">
+                                        <h3 id = "price1">Water Bills: 100$ EGP</h3>
+                                        <div class="meta">enter the amount</div>
+                                        <input type="text" class="form-control" id="bill1" style = "margin-bottom: 10px;"/>
+                                        <input type="reset" class="btn btn-success" value="Pay Now" onclick="payBills(1)">
                                     </div>
                                 </li>
                                 <li class="comment">    
                                     <div class="comment-body">
-                                        <h3>Gas Bills: 50$ EGP</h3>
+                                        <h3 id = "price2">Electricity Bills: 250$ EGP</h3>
                                         <div class="meta">enter the amount</div>
-                                        <input type="text" class="form-control" id="gasBills" style = "margin-bottom: 10px;"/>
-                                        <input type="reset" class="btn btn-success" value="Pay Now">
+                                        <input type="text" class="form-control" id="bill2" style = "margin-bottom: 10px;"/>
+                                        <input type="reset" class="btn btn-success" value="Pay Now" onclick="payBills(2)">
                                     </div>
                                 </li>
                                 <li class="comment">    
                                     <div class="comment-body">
-                                        <h3>telephone Bills: 140$ EGP</h3>
+                                        <h3 id = "price3">Gas Bills: 50$ EGP</h3>
                                         <div class="meta">enter the amount</div>
-                                        <input type="text" class="form-control" id="telephoneBills" style = "margin-bottom: 10px;"/>
-                                        <input type="reset" class="btn btn-success" value="Pay Now">
+                                        <input type="text" class="form-control" id="bill3" style = "margin-bottom: 10px;"/>
+                                        <input type="reset" class="btn btn-success" value="Pay Now" onclick="payBills(3)">
                                     </div>
                                 </li>
                                 <li class="comment">    
                                     <div class="comment-body">
-                                        <h3>Internet Bills: 300$ EGP</h3>
+                                        <h3 id = "price4">telephone Bills: 140$ EGP</h3>
                                         <div class="meta">enter the amount</div>
-                                        <input type="text" class="form-control" id="internetBills" style = "margin-bottom: 10px;"/>
-                                        <input type="reset" class="btn btn-success" value="Pay Now">
+                                        <input type="text" class="form-control" id="bill4" style = "margin-bottom: 10px;"/>
+                                        <input type="reset" class="btn btn-success" value="Pay Now" onclick="payBills(4)">
                                     </div>
                                 </li>
+                                <li class="comment">    
+                                    <div class="comment-body">
+                                        <h3 id = "price5">Internet Bills: 300$ EGP</h3>
+                                        <div class="meta">enter the amount</div>
+                                        <input type="text" class="form-control" id="bill5" style = "margin-bottom: 10px;"/>
+                                        <input type="button" class="btn btn-success" value="Pay Now" onclick="payBills(5)">
+                                    </div>
+                                </li>   
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+        <script>
+            function payBills(x) {
+                let currentPoints = document.getElementById("balance").innerText;
+                currentPoints = currentPoints.split(" ");
+                let points = Number(currentPoints[1].substring(0 ,currentPoints[1].length - 1));
+                let temp = "bill".concat(x);
+                let price = document.getElementById(temp).innerText;
+                // price = price.split(" ");
+                // price = price[price.length - 2].substring(0 , price[price.length - 2].length - 1);
+                price = Number(price);
+                console.log(price);
+                if(points >= price){
+                  points -= price;
+                  var updatedPoints = document.getElementById("balance");
+                  updatedPoints.innerText = "Balanace: ".concat(points).concat("$");
+                //  const button = document.getElementById("item" + x);
+               //   button.disabled = true;
+                }
+            else{
+                    alert("No Enough Points");
+                }
+          }
+          </script>
 
 
 
