@@ -116,16 +116,16 @@
                                     <div class="comment-body">
                                         <h3 id = "price6">Credit Card Bills: 500$ EGP</h3>
                                         <div class="meta">enter the amount</div>
-                                        <input type="text" class="form-control" id="bill6" style = "margin-bottom: 10px;"/>
-                                        <input type="reset" class="btn btn-success" value="Pay Now" onclick="payBills(6)">
+                                        <input type="number" class="form-control" id="bill6" style = "margin-bottom: 10px;"/>
+                                        <input type="reset" class="btn btn-success" value="Pay Now" id = "button6" onclick="payBills(6)" style="background-color: rgb(245, 150, 50);border-color: rgb(245, 150, 50)">
                                     </div>
                                 </li>
                                 <li class="comment">    
                                     <div class="comment-body">
                                         <h3 id = "price7">Loan Bills: 1000$ EGP</h3>
                                         <div class="meta">enter the amount</div>
-                                        <input type="text" class="form-control" id="bill7" style = "margin-bottom: 10px;"/>
-                                        <input type="reset" class="btn btn-success" value="Pay Now" onclick="payBills(7)">
+                                        <input type="number" class="form-control" id="bill7" style = "margin-bottom: 10px;"/>
+                                        <input type="reset" class="btn btn-success" value="Pay Now" id = "button7" onclick="payBills(7)" style="background-color: rgb(245, 150, 50);border-color: rgb(245, 150, 50)">
                                     </div>
                                 </li>
 
@@ -133,40 +133,40 @@
                                     <div class="comment-body">
                                         <h3 id = "price1">Water Bills: 100$ EGP</h3>
                                         <div class="meta">enter the amount</div>
-                                        <input type="text" class="form-control" id="bill1" style = "margin-bottom: 10px;"/>
-                                        <input type="reset" class="btn btn-success" value="Pay Now" onclick="payBills(1)">
+                                        <input type="number" class="form-control" id="bill1" style = "margin-bottom: 10px;"/>
+                                        <input type="reset" class="btn btn-success" value="Pay Now" id = "button1" onclick="payBills(1)" style="background-color: rgb(245, 150, 50);border-color: rgb(245, 150, 50)">
                                     </div>
                                 </li>
                                 <li class="comment">    
                                     <div class="comment-body">
                                         <h3 id = "price2">Electricity Bills: 250$ EGP</h3>
                                         <div class="meta">enter the amount</div>
-                                        <input type="text" class="form-control" id="bill2" style = "margin-bottom: 10px;"/>
-                                        <input type="reset" class="btn btn-success" value="Pay Now" onclick="payBills(2)">
+                                        <input type="number" class="form-control" id="bill2" style = "margin-bottom: 10px;"/>
+                                        <input type="reset" class="btn btn-success" value="Pay Now" id = "button2" onclick="payBills(2)" style="background-color: rgb(245, 150, 50);border-color: rgb(245, 150, 50)">
                                     </div>
                                 </li>
                                 <li class="comment">    
                                     <div class="comment-body">
                                         <h3 id = "price3">Gas Bills: 50$ EGP</h3>
                                         <div class="meta">enter the amount</div>
-                                        <input type="text" class="form-control" id="bill3" style = "margin-bottom: 10px;"/>
-                                        <input type="reset" class="btn btn-success" value="Pay Now" onclick="payBills(3)">
+                                        <input type="number" class="form-control" id="bill3" style = "margin-bottom: 10px;"/>
+                                        <input type="reset" class="btn btn-success" value="Pay Now" id = "button3" onclick="payBills(3)" style="background-color: rgb(245, 150, 50);border-color: rgb(245, 150, 50)">
                                     </div>
                                 </li>
                                 <li class="comment">    
                                     <div class="comment-body">
                                         <h3 id = "price4">telephone Bills: 140$ EGP</h3>
                                         <div class="meta">enter the amount</div>
-                                        <input type="text" class="form-control" id="bill4" style = "margin-bottom: 10px;"/>
-                                        <input type="reset" class="btn btn-success" value="Pay Now" onclick="payBills(4)">
+                                        <input type="number" class="form-control" id="bill4" style = "margin-bottom: 10px;"/>
+                                        <input type="reset" class="btn btn-success" value="Pay Now" id = "button4" onclick="payBills(4)" style="background-color: rgb(245, 150, 50);border-color: rgb(245, 150, 50)">
                                     </div>
                                 </li>
                                 <li class="comment">    
                                     <div class="comment-body">
                                         <h3 id = "price5">Internet Bills: 300$ EGP</h3>
                                         <div class="meta">enter the amount</div>
-                                        <input type="text" class="form-control" id="bill5" style = "margin-bottom: 10px;"/>
-                                        <input type="button" class="btn btn-success" value="Pay Now" onclick="payBills(5)">
+                                        <input type="number" class="form-control" id="bill5" style = "margin-bottom: 10px;"/>
+                                        <input type="reset" class="btn btn-success" value="Pay Now" id = "button5" onclick="payBills(5)" style="background-color: rgb(245, 150, 50); border-color: rgb(245, 150, 50);">
                                     </div>
                                 </li>   
                         </div>
@@ -174,30 +174,45 @@
                 </div>
             </div>
         </section>
-        <script>
+        
+          <script>
             function payBills(x) {
-                let currentPoints = document.getElementById("balance").innerText;
-                currentPoints = currentPoints.split(" ");
-                let points = Number(currentPoints[1].substring(0 ,currentPoints[1].length - 1));
-                let temp = "bill".concat(x);
+                let currentBalance = document.getElementById("balance").innerText;
+                currentBalance = currentBalance.split(" ");
+                let balance = Number(currentBalance[1].substring(0, currentBalance[1].length - 1));
+                let billAmount = document.getElementById("bill" + x).value;
+                billAmount = Number(billAmount);
+                if(billAmount < 0){
+                    alert("Bill amount can not be negative.");
+                    return;
+                }
+                let temp = "price".concat(x);
                 let price = document.getElementById(temp).innerText;
-                // price = price.split(" ");
-                // price = price[price.length - 2].substring(0 , price[price.length - 2].length - 1);
-                price = Number(price);
-                console.log(price);
-                if(points >= price){
-                  points -= price;
-                  var updatedPoints = document.getElementById("balance");
-                  updatedPoints.innerText = "Balanace: ".concat(points).concat("$");
-                //  const button = document.getElementById("item" + x);
-               //   button.disabled = true;
+                price = price.split(" ");
+                let price1 = price[price.length - 2].substring(0 , price[price.length - 2].length - 1);
+                if(billAmount > price1){
+                    alert("Bill amount is more than needed.");
+                    return;
                 }
-            else{
-                    alert("No Enough Points");
+                if (billAmount <= balance) {
+                    balance -= billAmount;
+                    price1 -= billAmount;
+                    document.getElementById("balance").innerText = "Balance: " + balance + "$";
+                    var out = "";
+                    for(i=0; i<price.length-2 ;i++){
+                        out += price[i]+" ";
+                    }
+                    out += price1 + "$ EGP";
+                    document.getElementById("price" + x).innerText = out;
+                    if(price1 == 0){
+                          const button = document.getElementById("button" + x);
+                           button.disabled = true;
+                    }
+                } else {
+                    alert("Insufficient balance. Please enter a lower amount.");
                 }
-          }
-          </script>
-
+            }
+        </script>
 
 
 
