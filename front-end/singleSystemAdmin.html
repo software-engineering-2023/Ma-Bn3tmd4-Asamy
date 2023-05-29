@@ -113,13 +113,22 @@
                         </h2>
                     </div>
                 </div>
+                <script>
+                    function hide(x){
+                        var address = "comment-body"
+                        var section = document.getElementsByClassName(address);
+                        section[x - 1].style.display = "none";
+                        var image = document.getElementById("img".concat(x));
+                        image.style.display = "none";
+                    }
+                </script>
                 <div class="row">
                     <div class="col-md-8 blog-content">
                         <div class="pt-5">
                             <ul class="comment-list">
                                 <li class="comment">
                                     <div class="vcard bio">
-                                        <img src="images/person_1.jpg" alt="Free Website Template by Free-Template.co">
+                                        <img id="img1" src="images/person_1.jpg" alt="Free Website Template by Free-Template.co">
                                     </div>
                                     <div class="comment-body">
                                         <h3>Jean Doe</h3>
@@ -128,13 +137,13 @@
                                             laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat
                                             saepe enim sapiente iste iure! Quam voluptas earum impedit
                                             necessitatibus, nihil?</p>
-                                        <input type="reset" class="btn btn-info" value="Resolve">
+                                        <input onclick="hide(1)" type="reset" class="btn btn-info" value="Resolve">
                                     </div>
                                 </li>
 
                                 <li class="comment">
                                     <div class="vcard bio">
-                                        <img src="images/person_1.jpg" alt="Image placeholder">
+                                        <img id="img2" src="images/person_1.jpg" alt="Image placeholder">
                                     </div>
                                     <div class="comment-body">
                                         <h3>Jean Doe</h3>
@@ -143,13 +152,13 @@
                                             laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat
                                             saepe enim sapiente iste iure! Quam voluptas earum impedit
                                             necessitatibus, nihil?</p>
-                                        <input type="reset" class="btn btn-info" value="Resolve">
+                                        <input onclick="hide(2)" type="reset" class="btn btn-info" value="Resolve">
                                     </div>
                                 </li>
 
                                 <li class="comment">
                                     <div class="vcard bio">
-                                        <img src="images/person_1.jpg" alt="Free Website Template by Free-Template.co">
+                                        <img id="img3" src="images/person_1.jpg" alt="Free Website Template by Free-Template.co">
                                     </div>
                                     <div class="comment-body">
                                         <h3>Jean Doe</h3>
@@ -158,13 +167,13 @@
                                             laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat
                                             saepe enim sapiente iste iure! Quam voluptas earum impedit
                                             necessitatibus, nihil?</p>
-                                        <input type="reset" class="btn btn-info" value="Resolve">
+                                        <input onclick="hide(3)" type="reset" class="btn btn-info" value="Resolve">
                                     </div>
                                 </li>
 
                                 <li class="comment">
                                     <div class="vcard bio">
-                                        <img src="images/person_1.jpg" alt="Free Website Template by Free-Template.co">
+                                        <img id="img4" src="images/person_1.jpg" alt="Free Website Template by Free-Template.co">
                                     </div>
                                     <div class="comment-body">
                                         <h3>Jean Doe</h3>
@@ -173,13 +182,13 @@
                                             laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat
                                             saepe enim sapiente iste iure! Quam voluptas earum impedit
                                             necessitatibus, nihil?</p>
-                                        <input type="reset" class="btn btn-info" value="Resolve">
+                                        <input onclick="hide(4)" type="reset" class="btn btn-info" value="Resolve">
                                     </div>
                                 </li>
 
                                 <li class="comment">
                                     <div class="vcard bio">
-                                        <img src="images/person_1.jpg" alt="Free Website Template by Free-Template.co">
+                                        <img id="img5" src="images/person_1.jpg" alt="Free Website Template by Free-Template.co">
                                     </div>
                                     <div class="comment-body">
                                         <h3>Jean Doe</h3>
@@ -188,7 +197,7 @@
                                             laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat
                                             saepe enim sapiente iste iure! Quam voluptas earum impedit
                                             necessitatibus, nihil?</p>
-                                        <input type="reset" class="btn btn-info" value="Resolve">
+                                        <input onclick="hide(5)" type="reset" class="btn btn-info" value="Resolve">
                                     </div>
                                 </li>
                             </ul>
