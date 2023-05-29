@@ -22,7 +22,7 @@
 
       <label for="description">Additional Information:</label>
       <textarea id="description" name="description" placeholder="Enter any additional information"></textarea>
-      <input onclick="confirm()" type="submit" value="Submit Report and Apply for Replacement">
+      <input onclick="confirm()" type="button" value="Submit Report and Apply for Replacement">
     </form>
   </div>
 
@@ -47,7 +47,6 @@
             });
             if(!checked){
               alert("You must choose a reason for replacement");
-              document.location.href = "report-card.html", true;
             }else{
               alert("Issue Sent. We will get back to you soon");
               document.location.href = "indexLoggedIn.html", true;
