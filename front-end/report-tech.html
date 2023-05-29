@@ -17,20 +17,21 @@
       <label for="issue">Issue:</label>
       <textarea id="issue" name="issue" placeholder="Describe the issue"></textarea>
 
-      <input onclick="confirm()" type="submit" value="Report">
+      <input onclick="confirm()" type="button" value="Report">
     </form>
     <script>
         function confirm(){
           
-        const name = document.getElementById("name").value;
-        const email = document.getElementById("email").value;
-        const issue = document.getElementById("issue").value;
+          const name = document.getElementById("name").value;
+          const email = document.getElementById("email").value;
+          const issue = document.getElementById("issue").value;
           if(name == "" || email == "" || issue == ""){
             alert("All fields are required");
           }else{
             alert("Issue Sent. We will get back to you soon");
             document.location.href = "indexLoggedIn.html", true;
           }
+          
         }
   
       </script>

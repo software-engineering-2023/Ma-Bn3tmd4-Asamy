@@ -34,7 +34,7 @@ body {
     height: 120px;
   }
   
-  input[type="submit"] {
+  input[type="button"] {
     background-color: rgb(245, 102, 50);
     color: white;
     padding: 12px 20px;
@@ -46,7 +46,7 @@ body {
     transition: 0.5s ease;
   }
 
-  input[type="submit"]:hover {
+  input[type="button"]:hover {
     background-color: rgb(245, 150, 50);
     transform: scale(1.05);
   }
