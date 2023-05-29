@@ -111,32 +111,55 @@
                     <div class="text-center pt-5">
                         <h2 class="section-title mb-3" data-aos="fade-up" data-aos-delay="">
                             Loan Requests
-                        </h2>
+                        </h2>  
                     </div>
                 </div>
+                <script>
+                    function hide(x){
+                        var address = "comment-body"
+                        var section = document.getElementsByClassName(address);
+                        section[x - 1].style.display = "none";
+                        var image = document.getElementById("img".concat(x));
+                        image.style.display = "none";
+                    }
+                    function hideCC(x){
+                        var address = "comment-body"
+                        var section = document.getElementsByClassName(address);
+                        section[4 + x].style.display = "none";
+                        var image = document.getElementById("img".concat((x + 5)));
+                        image.style.display = "none";
+                    }
+                    function hideIssue(x){
+                        var address = "comment-body"
+                        var section = document.getElementsByClassName(address);
+                        section[9 + x].style.display = "none";
+                        var image = document.getElementById("img".concat((x + 10)));
+                        image.style.display = "none";
+                    }
+                </script>
                 <div class="row">
                     <div class="col-md-8 blog-content">
                         <div class="pt-5">
                             <ul class="comment-list">
                                 <li class="comment">
                                     <div class="vcard bio">
-                                        <img src="images/person_1.jpg" alt="Free Website Template by Free-Template.co">
+                                        <img id="img1" src="images/person_1.jpg" alt="Free Website Template by Free-Template.co">
                                     </div>
-                                    <div class="comment-body">
+                                    <div oncl id="comment-body1" class="comment-body">
                                         <h3>Jean Doe</h3>
                                         <div class="meta">January 9, 2018 at 2:21pm</div>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem
                                             laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat
                                             saepe enim sapiente iste iure! Quam voluptas earum impedit
                                             necessitatibus, nihil?</p>
-                                        <input type="reset" class="btn btn-success" value="Accept">
-                                        <input type="reset" class="btn btn-danger" value="Reject">
+                                        <input onclick="hide(1)" id="success1" type="reset" class="btn btn-success" value="Accept">
+                                        <input onclick="hide(1)" id="danger1" type="reset" class="btn btn-danger" value="Reject">
                                     </div>
                                 </li>
 
                                 <li class="comment">
                                     <div class="vcard bio">
-                                        <img src="images/person_1.jpg" alt="Image placeholder">
+                                        <img id="img2" src="images/person_1.jpg" alt="Image placeholder">
                                     </div>
                                     <div class="comment-body">
                                         <h3>Jean Doe</h3>
@@ -145,14 +168,14 @@
                                             laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat
                                             saepe enim sapiente iste iure! Quam voluptas earum impedit
                                             necessitatibus, nihil?</p>
-                                        <input type="reset" class="btn btn-success" value="Accept">
-                                        <input type="reset" class="btn btn-danger" value="Reject">
+                                        <input onclick="hide(2)" type="reset" class="btn btn-success" value="Accept">
+                                        <input onclick="hide(2)" type="reset" class="btn btn-danger" value="Reject">
                                     </div>
                                 </li>
 
                                 <li class="comment">
                                     <div class="vcard bio">
-                                        <img src="images/person_1.jpg" alt="Free Website Template by Free-Template.co">
+                                        <img id="img3" src="images/person_1.jpg" alt="Free Website Template by Free-Template.co">
                                     </div>
                                     <div class="comment-body">
                                         <h3>Jean Doe</h3>
@@ -161,14 +184,14 @@
                                             laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat
                                             saepe enim sapiente iste iure! Quam voluptas earum impedit
                                             necessitatibus, nihil?</p>
-                                        <input type="reset" class="btn btn-success" value="Accept">
-                                        <input type="reset" class="btn btn-danger" value="Reject">
+                                        <input onclick="hide(3)" type="reset" class="btn btn-success" value="Accept">
+                                        <input onclick="hide(3)" type="reset" class="btn btn-danger" value="Reject">
                                     </div>
                                 </li>
 
                                 <li class="comment">
                                     <div class="vcard bio">
-                                        <img src="images/person_1.jpg" alt="Free Website Template by Free-Template.co">
+                                        <img id="img4" src="images/person_1.jpg" alt="Free Website Template by Free-Template.co">
                                     </div>
                                     <div class="comment-body">
                                         <h3>Jean Doe</h3>
@@ -177,14 +200,14 @@
                                             laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat
                                             saepe enim sapiente iste iure! Quam voluptas earum impedit
                                             necessitatibus, nihil?</p>
-                                        <input type="reset" class="btn btn-success" value="Accept">
-                                        <input type="reset" class="btn btn-danger" value="Reject">
+                                        <input onclick="hide(4)" type="reset" class="btn btn-success" value="Accept">
+                                        <input onclick="hide(4)" type="reset" class="btn btn-danger" value="Reject">
                                     </div>
                                 </li>
 
                                 <li class="comment">
                                     <div class="vcard bio">
-                                        <img src="images/person_1.jpg" alt="Free Website Template by Free-Template.co">
+                                        <img id="img5" src="images/person_1.jpg" alt="Free Website Template by Free-Template.co">
                                     </div>
                                     <div class="comment-body">
                                         <h3>Jean Doe</h3>
@@ -193,8 +216,8 @@
                                             laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat
                                             saepe enim sapiente iste iure! Quam voluptas earum impedit
                                             necessitatibus, nihil?</p>
-                                        <input type="reset" class="btn btn-success" value="Accept">
-                                        <input type="reset" class="btn btn-danger" value="Reject">
+                                        <input onclick="hide(5)" type="reset" class="btn btn-success" value="Accept">
+                                        <input onclick="hide(5)" type="reset" class="btn btn-danger" value="Reject">
                                     </div>
                                 </li>
                             </ul>
@@ -222,7 +245,7 @@
                             <ul class="comment-list">
                                 <li class="comment">
                                     <div class="vcard bio">
-                                        <img src="images/person_1.jpg" alt="Free Website Template by Free-Template.co">
+                                        <img id="img6" src="images/person_1.jpg" alt="Free Website Template by Free-Template.co">
                                     </div>
                                     <div class="comment-body">
                                         <h3>Jean Doe</h3>
@@ -231,14 +254,14 @@
                                             laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat
                                             saepe enim sapiente iste iure! Quam voluptas earum impedit
                                             necessitatibus, nihil?</p>
-                                        <input type="reset" class="btn btn-success" value="Accept">
-                                        <input type="reset" class="btn btn-danger" value="Reject">
+                                        <input onclick="hideCC(1)" type="reset" class="btn btn-success" value="Accept">
+                                        <input onclick="hideCC(1)" type="reset" class="btn btn-danger" value="Reject">
                                     </div>
                                 </li>
 
                                 <li class="comment">
                                     <div class="vcard bio">
-                                        <img src="images/person_1.jpg" alt="Image placeholder">
+                                        <img id="img7" src="images/person_1.jpg" alt="Image placeholder">
                                     </div>
                                     <div class="comment-body">
                                         <h3>Jean Doe</h3>
@@ -247,14 +270,14 @@
                                             laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat
                                             saepe enim sapiente iste iure! Quam voluptas earum impedit
                                             necessitatibus, nihil?</p>
-                                        <input type="reset" class="btn btn-success" value="Accept">
-                                        <input type="reset" class="btn btn-danger" value="Reject">
+                                        <input onclick="hideCC(2)" type="reset" class="btn btn-success" value="Accept">
+                                        <input onclick="hideCC(2)" type="reset" class="btn btn-danger" value="Reject">
                                     </div>
                                 </li>
 
                                 <li class="comment">
                                     <div class="vcard bio">
-                                        <img src="images/person_1.jpg" alt="Free Website Template by Free-Template.co">
+                                        <img id="img8" src="images/person_1.jpg" alt="Free Website Template by Free-Template.co">
                                     </div>
                                     <div class="comment-body">
                                         <h3>Jean Doe</h3>
@@ -263,14 +286,14 @@
                                             laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat
                                             saepe enim sapiente iste iure! Quam voluptas earum impedit
                                             necessitatibus, nihil?</p>
-                                        <input type="reset" class="btn btn-success" value="Accept">
-                                        <input type="reset" class="btn btn-danger" value="Reject">
+                                        <input onclick="hideCC(3)" type="reset" class="btn btn-success" value="Accept">
+                                        <input onclick="hideCC(3)" type="reset" class="btn btn-danger" value="Reject">
                                     </div>
                                 </li>
 
                                 <li class="comment">
                                     <div class="vcard bio">
-                                        <img src="images/person_1.jpg" alt="Free Website Template by Free-Template.co">
+                                        <img id="img9" src="images/person_1.jpg" alt="Free Website Template by Free-Template.co">
                                     </div>
                                     <div class="comment-body">
                                         <h3>Jean Doe</h3>
@@ -279,14 +302,14 @@
                                             laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat
                                             saepe enim sapiente iste iure! Quam voluptas earum impedit
                                             necessitatibus, nihil?</p>
-                                        <input type="reset" class="btn btn-success" value="Accept">
-                                        <input type="reset" class="btn btn-danger" value="Reject">
+                                        <input onclick="hideCC(4)" type="reset" class="btn btn-success" value="Accept">
+                                        <input onclick="hideCC(4)" type="reset" class="btn btn-danger" value="Reject">
                                     </div>
                                 </li>
 
                                 <li class="comment">
                                     <div class="vcard bio">
-                                        <img src="images/person_1.jpg" alt="Free Website Template by Free-Template.co">
+                                        <img id="img10" src="images/person_1.jpg" alt="Free Website Template by Free-Template.co">
                                     </div>
                                     <div class="comment-body">
                                         <h3>Jean Doe</h3>
@@ -295,8 +318,8 @@
                                             laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat
                                             saepe enim sapiente iste iure! Quam voluptas earum impedit
                                             necessitatibus, nihil?</p>
-                                        <input type="reset" class="btn btn-success" value="Accept">
-                                        <input type="reset" class="btn btn-danger" value="Reject">
+                                        <input onclick="hideCC(5)" type="reset" class="btn btn-success" value="Accept">
+                                        <input onclick="hideCC(5)" type="reset" class="btn btn-danger" value="Reject">
                                     </div>
                                 </li>
                             </ul>
@@ -323,7 +346,7 @@
                             <ul class="comment-list">
                                 <li class="comment">
                                     <div class="vcard bio">
-                                        <img src="images/person_1.jpg" alt="Free Website Template by Free-Template.co">
+                                        <img id="img11" src="images/person_1.jpg" alt="Free Website Template by Free-Template.co">
                                     </div>
                                     <div class="comment-body">
                                         <h3>Jean Doe</h3>
@@ -332,13 +355,13 @@
                                             laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat
                                             saepe enim sapiente iste iure! Quam voluptas earum impedit
                                             necessitatibus, nihil?</p>
-                                        <input type="reset" class="btn btn-info" value="Resolve">
+                                        <input onclick="hideIssue(1)" type="reset" class="btn btn-info" value="Resolve">
                                     </div>
                                 </li>
 
                                 <li class="comment">
                                     <div class="vcard bio">
-                                        <img src="images/person_1.jpg" alt="Image placeholder">
+                                        <img id="img12" src="images/person_1.jpg" alt="Image placeholder">
                                     </div>
                                     <div class="comment-body">
                                         <h3>Jean Doe</h3>
@@ -347,13 +370,13 @@
                                             laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat
                                             saepe enim sapiente iste iure! Quam voluptas earum impedit
                                             necessitatibus, nihil?</p>
-                                        <input type="reset" class="btn btn-info" value="Resolve">
+                                        <input onclick="hideIssue(2)" type="reset" class="btn btn-info" value="Resolve">
                                     </div>
                                 </li>
 
                                 <li class="comment">
                                     <div class="vcard bio">
-                                        <img src="images/person_1.jpg" alt="Free Website Template by Free-Template.co">
+                                        <img id="img13" src="images/person_1.jpg" alt="Free Website Template by Free-Template.co">
                                     </div>
                                     <div class="comment-body">
                                         <h3>Jean Doe</h3>
@@ -362,13 +385,13 @@
                                             laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat
                                             saepe enim sapiente iste iure! Quam voluptas earum impedit
                                             necessitatibus, nihil?</p>
-                                        <input type="reset" class="btn btn-info" value="Resolve">
+                                        <input onclick="hideIssue(3)" type="reset" class="btn btn-info" value="Resolve">
                                     </div>
                                 </li>
 
                                 <li class="comment">
                                     <div class="vcard bio">
-                                        <img src="images/person_1.jpg" alt="Free Website Template by Free-Template.co">
+                                        <img id="img14" src="images/person_1.jpg" alt="Free Website Template by Free-Template.co">
                                     </div>
                                     <div class="comment-body">
                                         <h3>Jean Doe</h3>
@@ -377,13 +400,13 @@
                                             laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat
                                             saepe enim sapiente iste iure! Quam voluptas earum impedit
                                             necessitatibus, nihil?</p>
-                                        <input type="reset" class="btn btn-info" value="Resolve">
+                                        <input onclick="hideIssue(4)" type="reset" class="btn btn-info" value="Resolve">
                                     </div>
                                 </li>
 
                                 <li class="comment">
                                     <div class="vcard bio">
-                                        <img src="images/person_1.jpg" alt="Free Website Template by Free-Template.co">
+                                        <img id="img15" src="images/person_1.jpg" alt="Free Website Template by Free-Template.co">
                                     </div>
                                     <div class="comment-body">
                                         <h3>Jean Doe</h3>
@@ -392,7 +415,7 @@
                                             laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat
                                             saepe enim sapiente iste iure! Quam voluptas earum impedit
                                             necessitatibus, nihil?</p>
-                                        <input type="reset" class="btn btn-info" value="Resolve">
+                                        <input onclick="hideIssue(5)" type="reset" class="btn btn-info" value="Resolve">
                                     </div>
                                 </li>
                             </ul>
