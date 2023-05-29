@@ -31,11 +31,15 @@
         const email = document.getElementsByClassName("email")[0].value;
         const password = document.getElementsByClassName("password")[0].value;
         let date = document.getElementsByClassName("birthdate")[0].value;
+        let year = Number(date.split("-")[0]);
+        console.log(year);
         const phone = document.getElementsByClassName("phone")[0].value;
         if(phone == "" || username == "" || email == "" || password == "" || date == ""){
           alert("All fields are required");
         }else if(username == "nour" || username == "banker" || username == "admin"){
           alert("Username already taken");
+        }else if(2023 - year < 20){
+          alert("You Must Be At Least 20 Years Old")
         }else{
           alert("Successful Registeration !")
           document.location.href = "indexLoggedIn.html", true;
